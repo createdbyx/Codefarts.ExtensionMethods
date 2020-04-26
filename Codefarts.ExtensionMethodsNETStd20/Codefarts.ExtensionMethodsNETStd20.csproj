@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Codefarts.ExtensionMethods</RootNamespace>
-    <AssemblyVersion>2020.4.26.0</AssemblyVersion>
-    <FileVersion>2020.4.26.0</FileVersion>
+    <AssemblyVersion>2020.4.26.3</AssemblyVersion>
+    <FileVersion>2020.4.26.3</FileVersion>
     <PackageId>Codefarts.ExtensionMethods</PackageId>
     <Authors>Dean Lunz</Authors>
     <Company>Codefarts</Company>
