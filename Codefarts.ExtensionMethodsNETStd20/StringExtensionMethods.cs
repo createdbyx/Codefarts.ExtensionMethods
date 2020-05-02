@@ -5,6 +5,8 @@
 //   http://www.codefarts.com
 // </copyright>
 
+using System.Collections;
+
 namespace System
 {
 #if !PORTABLE
@@ -253,6 +255,32 @@ namespace System
             return true;
         }
 #endif
+
+        /// <summary>
+        /// Returns file names from given folder that comply to given filters.
+        /// </summary>
+        /// <param name="path">Folder with files to retrieve.</param>
+        /// <param name="filter">Multiple file filters separated by | character.</param>
+        /// <param name="searchOption">File.IO.SearchOption, could be AllDirectories or TopDirectoryOnly</param>
+        /// <returns>An enumerable type of file path strings that meet the given filter.</returns>
+        public static IEnumerable<string> GetFiles(this string path, string filter, SearchOption searchOption)
+        {
+            // ArrayList will hold all file names
+            var allFiles = new List<string>();
+
+            // Create an array of filter string
+            var multipleFilters = string.IsNullOrWhiteSpace(filter) ? Array.Empty<string>() : filter.Split('|');
+
+            // for each filter find matching file names
+            foreach (var fileFilter in multipleFilters)
+            {
+                // add found file names to array list
+                allFiles.AddRange(Directory.GetFiles(path, fileFilter, searchOption));
+            }
+
+            // returns string array of relevant file names
+            return allFiles;
+        }
 
         /// <summary>
         /// Returns an "interpolated" string.
