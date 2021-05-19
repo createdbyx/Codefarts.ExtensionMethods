@@ -33,7 +33,7 @@ namespace System
         /// <summary>
         /// Gets a random position inside a 1x1x1 unit cube.
         /// </summary>
-        /// <param name="rnd">The random.</param>           
+        /// <param name="rnd">The random.</param>
         /// <returns>A new <see cref="Vector3"/>.</returns>
         /// <remarks>The random point will be centered around 0.</remarks>
         public static void GetInsideUnitCube(this Random rnd, out float sizeX, out float sizeY, out float sizeZ)

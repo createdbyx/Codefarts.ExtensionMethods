@@ -11,3 +11,5 @@ Codefarts.ExtensionMethodsStd21/bin/
 Codefarts.ExtensionMethodsCore31/obj/
 Codefarts.ExtensionMethodsCore31/bin/
 Codefarts.UnitTestExtensionMethodsStd20/bin/
+.idea/
+*.user

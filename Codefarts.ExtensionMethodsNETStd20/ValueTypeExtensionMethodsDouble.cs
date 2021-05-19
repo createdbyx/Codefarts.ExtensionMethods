@@ -35,7 +35,7 @@ namespace System
 
             return value;
         }
-        
+
         /// <summary>Determines whether a value in within a certain range.</summary>
         /// <param name="value">The value.</param>
         /// <param name="min">The minimum value.</param>

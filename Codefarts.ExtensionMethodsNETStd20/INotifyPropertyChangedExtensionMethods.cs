@@ -17,83 +17,7 @@ namespace System.ComponentModel
     /// Provides extension methods for the <see cref="INotifyPropertyChanged"/> interface.
     /// </summary>
     public static class INotifyPropertyChangedExtensionMethods
-    {
-        ///// <summary>Attaches a callbackHooks into a event </summary>
-        ///// <param propertyName="list">The list.</param>
-        ///// <param propertyName="predicate">The callback used to determine weather or not the item in the list should be removed.</param>
-        ///// <exception cref="ArgumentNullException"><paramref propertyName="predicate"/> is <see langword="null"/></exception>
-        //public static void OnChanged(this INotifyPropertyChanged source, IEnumerable<string> names, Action<object, PropertyChangedEventArgs> handler)
-        //{
-        //    if (handler == null)
-        //    {
-        //        throw new ArgumentNullException(nameof(handler));
-        //    }
-
-        //    foreach (var propertyName in names)
-        //    {
-        //        OnChanged(source, propertyName, handler);
-        //    }
-        //}
-
-        //public static void OnChanged(this INotifyPropertyChanged source, string propertyName, Action<object, PropertyChangedEventArgs> handler)
-        //{
-        //    if (handler == null)
-        //    {
-        //        throw new ArgumentNullException(nameof(handler));
-        //    }
-
-        //    source.PropertyChanged += (s, e) =>
-        //    {
-        //        if (e.PropertyName.Equals(propertyName))
-        //        {
-        //            handler(s, e);
-        //        }
-        //    };
-        //}
-
-        //public static void OnChanged<TProperty>(this INotifyPropertyChanged source,
-        //                                        Expression<Func<TProperty>> property,
-        //                                        Action<object, PropertyChangedEventArgs> handler,
-        //                                        bool callImmediately)
-        //{
-        //    OnChanged(source, property, handler, callImmediately, null);
-        //}
-
-        //public static void OnChanged<TProperty>(this INotifyPropertyChanged source,
-        //                                        Expression<Func<TProperty>> property,
-        //                                        Action<object, PropertyChangedEventArgs> handler,
-        //                                        bool callImmediately,
-        //                                        object sender)
-        //{
-        //    OnChanged(source, property, handler);
-        //    if (callImmediately)
-        //    {
-        //        handler(sender, new PropertyChangedEventArgs(Helpers.GetMemberInfo(property).Name));
-        //    }
-        //}
-
-        //public static void OnChanged<TProperty>(this INotifyPropertyChanged source, Expression<Func<TProperty>> property, Action<object, PropertyChangedEventArgs> handler)
-        //{
-        //    if (source == null)
-        //    {
-        //        throw new ArgumentNullException(nameof(source));
-        //    }
-
-        //    if (handler == null)
-        //    {
-        //        throw new ArgumentNullException(nameof(handler));
-        //    }
-
-        //    source.PropertyChanged += (s, e) =>
-        //    {
-        //        var propertyName = e.PropertyName;
-        //        if (string.Equals(propertyName, Helpers.GetMemberInfo(property).Name, StringComparison.Ordinal))
-        //        {
-        //            handler(s, e);
-        //        }
-        //    };
-        //}
-
+    { 
         public static bool Notify(this INotifyPropertyChanged instance, string propertyName)
         {
             return instance.InternalNotify<object>(instance, propertyName, null, null, false);
@@ -172,30 +96,6 @@ namespace System.ComponentModel
         public static bool Notify<T>(this INotifyPropertyChanged instance, object sender, string propertyName, T oldValue, T newValue)
         {
             return instance.InternalNotify(sender, propertyName, oldValue, newValue, true);
-        }
-
-        public static bool Notify(this INotifyPropertyChanged instance, object sender, Expression<Func<object>> property)
-        {
-            var memberInfo = Helpers.GetMemberInfo(property);
-            return instance.InternalNotify<object>(sender, memberInfo.Name, null, null, false);
-        }
-
-        public static bool Notify(this INotifyPropertyChanged instance, Expression<Func<object>> property)
-        {
-            var memberInfo = Helpers.GetMemberInfo(property);
-            return instance.InternalNotify<object>(instance, memberInfo.Name, null, null, false);
-        }
-
-        public static bool Notify<T>(this INotifyPropertyChanged instance, object sender, Expression<Func<T>> property, T oldValue, T newValue)
-        {
-            var memberInfo = Helpers.GetMemberInfo(property);
-            return instance.InternalNotify(sender, memberInfo.Name, oldValue, newValue, true);
-        }
-
-        public static bool Notify<T>(this INotifyPropertyChanged instance, Expression<Func<T>> property, T oldValue, T newValue)
-        {
-            var memberInfo = Helpers.GetMemberInfo(property);
-            return instance.InternalNotify(instance, memberInfo.Name, oldValue, newValue, true);
-        }
+        } 
     }
 }

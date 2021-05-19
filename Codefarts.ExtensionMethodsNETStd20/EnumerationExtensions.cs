@@ -10,8 +10,6 @@ namespace System
     /// </summary>
     public static class EnumerationExtensions
     {
-        #region Extension Methods
-
 #if !PORTABLE && !WINDOWS_UWP
         /// <summary>
         /// Gets the description attribute value for a enum.
@@ -25,7 +23,7 @@ namespace System
             var attribute = Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute)) as DescriptionAttribute;
 
             return attribute == null ? value.ToString() : attribute.Description;
-        } 
+        }
 #endif
 
         /// <summary>
@@ -120,11 +118,7 @@ namespace System
             return attributes.Length > 0;
         }
 
-        #endregion
-
-        #region Helper Classes
-
-        // class to simplify narrowing values between 
+        // class to simplify narrowing values between
         // a ulong and long since either value should
         // cover any lesser value
         private class EnumValueHelper
@@ -161,7 +155,5 @@ namespace System
                 }
             }
         }
-
-        #endregion   
     }
 }

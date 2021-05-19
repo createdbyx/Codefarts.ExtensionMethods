@@ -43,7 +43,7 @@ namespace System
         /// <returns>True if the value is in range.</returns>
         public static bool IsInRange(this BaseType value, BaseType min, BaseType max)
         {
-            return value >= min && value <= max;  
+            return value >= min && value <= max;
         }
 
         /// <summary>Determines whether a value in within a certain range.</summary>

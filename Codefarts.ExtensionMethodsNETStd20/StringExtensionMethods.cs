@@ -325,7 +325,7 @@ namespace System
                 char cInterpolated;
                 if (cEnd == ' ')
                 {
-                    // If the end character is a space we just show a space 
+                    // If the end character is a space we just show a space
                     // regardless of interpolation. It looks better this way...
                     cInterpolated = ' ';
                 }

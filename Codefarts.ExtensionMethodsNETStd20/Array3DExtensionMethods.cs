@@ -58,11 +58,11 @@ namespace System
         /// width or height is less then 1.
         /// </exception>
         /// <remarks>
-        /// <p>This method provides an alternative to working with three dimensional arrays "var value = new int[3,3,3];" by operating 
+        /// <p>This method provides an alternative to working with three dimensional arrays "var value = new int[3,3,3];" by operating
         /// on a single dimensional array using a math formula to determine the index into the array.</p>
         /// <p>Think of a multi-layered image. Each image layer consists of a grid of cells defined by width * height.</p>
-        /// <p>We can use the formula "layer * (width * height)" to get the starting index of the layer in the array. 
-        /// To get the index in the image we can use the formula "(y * width) + x". 
+        /// <p>We can use the formula "layer * (width * height)" to get the starting index of the layer in the array.
+        /// To get the index in the image we can use the formula "(y * width) + x".
         /// Combining these two formulas we can access any grid cell of any layer in the array like so "(layer * (width * height)) + ((y * width) + x)".</p>
         /// <p>This method does not perform range checking and will throw index out of range exceptions if invalid arguments are specified.</p></remarks>
         public static T Get3D<T>(this T[] array, int width, int height, int x, int y, int z)
@@ -227,7 +227,7 @@ namespace System
             {
                 throw new ArgumentOutOfRangeException("depth");
             }
-                    
+
             return array.RemoveRange(depth * length, length);
         }
     }

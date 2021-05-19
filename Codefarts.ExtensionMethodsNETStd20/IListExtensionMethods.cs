@@ -3,7 +3,7 @@
 //   All rights reserved.
 //   contact@codefarts.com
 //   http://www.codefarts.com
-// </copyright>            
+// </copyright>
 namespace System.Collections
 {
     /// <summary>
