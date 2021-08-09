@@ -4,12 +4,8 @@
 // http://www.codefarts.com
 // </copyright>
 
-using System.Data;
-
 namespace System.ComponentModel
 {
-    using System.Collections.Generic;
-    using System.Linq.Expressions;
     using System.Reflection;
     using Codefarts.ExtensionMethods;
 
@@ -17,7 +13,7 @@ namespace System.ComponentModel
     /// Provides extension methods for the <see cref="INotifyPropertyChanged"/> interface.
     /// </summary>
     public static class INotifyPropertyChangedExtensionMethods
-    { 
+    {
         public static bool Notify(this INotifyPropertyChanged instance, string propertyName)
         {
             return instance.InternalNotify<object>(instance, propertyName, null, null, false);
@@ -33,7 +29,8 @@ namespace System.ComponentModel
             return instance.InternalNotify<object>(sender, propertyName, null, null, false);
         }
 
-        private static bool InternalNotify<T>(this INotifyPropertyChanged instance, object sender, string propertyName, T oldValue, T newValue, bool hasValues)
+        private static bool InternalNotify<T>(this INotifyPropertyChanged instance, object sender, string propertyName, T oldValue, T newValue,
+            bool hasValues)
         {
             if (instance == null)
             {
@@ -82,11 +79,13 @@ namespace System.ComponentModel
             {
                 if (hasValues)
                 {
-                    propertyChangedDelegate.Method.Invoke(propertyChangedDelegate.Target, new[] { sender, new PropertyChangedEventArgs<T>(propertyName, oldValue, newValue) });
+                    propertyChangedDelegate.Method.Invoke(propertyChangedDelegate.Target,
+                        new[] { sender, new PropertyChangedEventArgs<T>(propertyName, oldValue, newValue) });
                 }
                 else
                 {
-                    propertyChangedDelegate.Method.Invoke(propertyChangedDelegate.Target, new[] { sender, new PropertyChangedEventArgs(propertyName) });
+                    propertyChangedDelegate.Method.Invoke(propertyChangedDelegate.Target,
+                        new[] { sender, new PropertyChangedEventArgs(propertyName) });
                 }
             }
 
@@ -96,6 +95,6 @@ namespace System.ComponentModel
         public static bool Notify<T>(this INotifyPropertyChanged instance, object sender, string propertyName, T oldValue, T newValue)
         {
             return instance.InternalNotify(sender, propertyName, oldValue, newValue, true);
-        } 
+        }
     }
 }
