@@ -13,3 +13,5 @@ Codefarts.ExtensionMethodsCore31/bin/
 Codefarts.UnitTestExtensionMethodsStd20/bin/
 .idea/
 *.user
+[Oo]bj/
+[Bb]in/
