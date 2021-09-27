@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{8B5840D6-4EDB-4B71-A22E-754CD4B09FE6}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>Codefarts.ExtensionMethodsNET45</RootNamespace>
+        <AssemblyName>Codefarts.ExtensionMethodsNET45</AssemblyName>
+        <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\Array3DExtensionMethods.cs">
+          <Link>Array3DExtensionMethods.cs</Link>
+        </Compile>
+        <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\ArrayExtensionMethods.cs">
+          <Link>ArrayExtensionMethods.cs</Link>
+        </Compile>
+        <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\CollectionExtensionMethods.cs">
+          <Link>CollectionExtensionMethods.cs</Link>
+        </Compile>
+        <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\EnumerationExtensions.cs">
+          <Link>EnumerationExtensions.cs</Link>
+        </Compile>
+        <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\EventArgs\PropertyChangedEventArgs.cs">
+          <Link>EventArgs\PropertyChangedEventArgs.cs</Link>
+        </Compile>
+        <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\ExpressionExtensions.cs">
+          <Link>ExpressionExtensions.cs</Link>
+        </Compile>
+        <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\GenericIListExtensionMethods.cs">
+          <Link>GenericIListExtensionMethods.cs</Link>
+        </Compile>
+        <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\HashSetExtensionMethods.cs">
+          <Link>HashSetExtensionMethods.cs</Link>
+        </Compile>
+        <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\Helpers.cs">
+          <Link>Helpers.cs</Link>
+        </Compile>
+        <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\IDictionaryExtensionMethods.cs">
+          <Link>IDictionaryExtensionMethods.cs</Link>
+        </Compile>
+        <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\IEnumerableExtensionMethods.cs">
+          <Link>IEnumerableExtensionMethods.cs</Link>
+        </Compile>
+        <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\IListExtensionMethods.cs">
+          <Link>IListExtensionMethods.cs</Link>
+        </Compile>
+        <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\INotifyPropertyChangedExtensionMethods.cs">
+          <Link>INotifyPropertyChangedExtensionMethods.cs</Link>
+        </Compile>
+        <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\PropertyChangedEventHandlerExtensions.cs">
+          <Link>PropertyChangedEventHandlerExtensions.cs</Link>
+        </Compile>
+        <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\RandomHelperMethods.cs">
+          <Link>RandomHelperMethods.cs</Link>
+        </Compile>
+        <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\StringExtensionMethods.cs">
+          <Link>StringExtensionMethods.cs</Link>
+        </Compile>
+        <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\ValueTypeExtensionMethodsDouble.cs">
+          <Link>ValueTypeExtensionMethodsDouble.cs</Link>
+        </Compile>
+        <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\ValueTypeExtensionMethodsIntegers.cs">
+          <Link>ValueTypeExtensionMethodsIntegers.cs</Link>
+        </Compile>
+        <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\ValueTypeExtensionMethodsLongs.cs">
+          <Link>ValueTypeExtensionMethodsLongs.cs</Link>
+        </Compile>
+        <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\ValueTypeExtensionMethodsSingle.cs">
+          <Link>ValueTypeExtensionMethodsSingle.cs</Link>
+        </Compile>
+        <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <AdditionalFiles Include="..\stylecop.json">
+        <Link>stylecop.json</Link>
+      </AdditionalFiles>
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="Debug-PostBuild.xml" />
+      <None Include="packages.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+      <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+        <Exec Command="powershell.exe -ExecutionPolicy Unrestricted -noprofile -nologo -noninteractive -Command .'P:\PowerShell\post-build.ps1' -vs_BuildEvent:Pre -vs_OutDir:'$(OutDir)' -vs_ConfigurationName:'$(ConfigurationName)' -vs_ProjectName:'$(ProjectName)' -vs_TargetName:'$(TargetName)' -vs_TargetPath:'$(TargetPath)' -vs_ProjectPath:'$(ProjectPath)' -vs_ProjectFileName:'$(ProjectFileName)' -vs_TargetExt:'$(TargetExt)' -vs_TargetFileName:'$(TargetFileName)' -vs_DevEnvDir:'$(DevEnvDir)' -vs_TargetDir:'$(TargetDir)' -vs_ProjectDir:'$(ProjectDir)' -vs_SolutionFileName:'$(SolutionFileName)' -vs_SolutionPath:'$(SolutionPath)' -vs_SolutionDir:'$(SolutionDir)' -vs_SolutionName:'$(SolutionName)' -vs_PlatformName:'$(PlatformName)' -vs_ProjectExt:'$(ProjectExt)' -vs_SolutionExt:'$(SolutionExt)'&#xD;&#xA;" />
+    </Target>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Exec Command="powershell.exe -ExecutionPolicy Unrestricted -noprofile -nologo -noninteractive -Command .'P:\PowerShell\post-build.ps1' -vs_BuildEvent:Post -vs_OutDir:'$(OutDir)' -vs_ConfigurationName:'$(ConfigurationName)' -vs_ProjectName:'$(ProjectName)' -vs_TargetName:'$(TargetName)' -vs_TargetPath:'$(TargetPath)' -vs_ProjectPath:'$(ProjectPath)' -vs_ProjectFileName:'$(ProjectFileName)' -vs_TargetExt:'$(TargetExt)' -vs_TargetFileName:'$(TargetFileName)' -vs_DevEnvDir:'$(DevEnvDir)' -vs_TargetDir:'$(TargetDir)' -vs_ProjectDir:'$(ProjectDir)' -vs_SolutionFileName:'$(SolutionFileName)' -vs_SolutionPath:'$(SolutionPath)' -vs_SolutionDir:'$(SolutionDir)' -vs_SolutionName:'$(SolutionName)' -vs_PlatformName:'$(PlatformName)' -vs_ProjectExt:'$(ProjectExt)' -vs_SolutionExt:'$(SolutionExt)'" />
+    </Target>
+
+</Project>

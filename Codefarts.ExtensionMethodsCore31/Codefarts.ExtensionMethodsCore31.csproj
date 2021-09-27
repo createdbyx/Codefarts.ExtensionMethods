@@ -13,7 +13,9 @@
     <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\ArrayExtensionMethods.cs" Link="ArrayExtensionMethods.cs" />
     <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\CollectionExtensionMethods.cs" Link="CollectionExtensionMethods.cs" />
     <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\EnumerationExtensions.cs" Link="EnumerationExtensions.cs" />
-    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\EventArgs\PropertyChangedEventArgs.cs" Link="PropertyChangedEventArgs.cs" />
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\EventArgs\PropertyChangedEventArgs.cs">
+      <Link>EventArgs\PropertyChangedEventArgs.cs</Link>
+    </Compile>
     <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\ExpressionExtensions.cs" Link="ExpressionExtensions.cs" />
     <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\GenericIListExtensionMethods.cs" Link="GenericIListExtensionMethods.cs" />
     <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\HashSetExtensionMethods.cs" Link="HashSetExtensionMethods.cs" />
