@@ -269,7 +269,7 @@ namespace System
             var allFiles = new List<string>();
 
             // Create an array of filter string
-            var multipleFilters = string.IsNullOrWhiteSpace(filter) ? Array.Empty<string>() : filter.Split('|');
+            var multipleFilters = string.IsNullOrWhiteSpace(filter) ? new string[0] : filter.Split('|');
 
             // for each filter find matching file names
             foreach (var fileFilter in multipleFilters)
