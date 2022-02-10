@@ -7,7 +7,7 @@
         <ProjectGuid>{8B5840D6-4EDB-4B71-A22E-754CD4B09FE6}</ProjectGuid>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Codefarts.ExtensionMethodsNET45</RootNamespace>
+        <RootNamespace>Codefarts.ExtensionMethods</RootNamespace>
         <AssemblyName>Codefarts.ExtensionMethodsNET45</AssemblyName>
         <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
