@@ -1,93 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
-    <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
-        <RootNamespace>Codefarts.ExtensionMethods</RootNamespace>
-    </PropertyGroup>
-
-    <ItemGroup>
-      <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
-    </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Codefarts.ExtensionMethods</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="powershell.exe -ExecutionPolicy Unrestricted -noprofile -nologo -noninteractive -Command .'P:\PowerShell\post-build.ps1' -vs_BuildEvent:Pre -vs_OutDir:'$(OutDir)' -vs_ConfigurationName:'$(ConfigurationName)' -vs_ProjectName:'$(ProjectName)' -vs_TargetName:'$(TargetName)' -vs_TargetPath:'$(TargetPath)' -vs_ProjectPath:'$(ProjectPath)' -vs_ProjectFileName:'$(ProjectFileName)' -vs_TargetExt:'$(TargetExt)' -vs_TargetFileName:'$(TargetFileName)' -vs_DevEnvDir:'$(DevEnvDir)' -vs_TargetDir:'$(TargetDir)' -vs_ProjectDir:'$(ProjectDir)' -vs_SolutionFileName:'$(SolutionFileName)' -vs_SolutionPath:'$(SolutionPath)' -vs_SolutionDir:'$(SolutionDir)' -vs_SolutionName:'$(SolutionName)' -vs_PlatformName:'$(PlatformName)' -vs_ProjectExt:'$(ProjectExt)' -vs_SolutionExt:'$(SolutionExt)'&#xD;&#xA;" />
+    <Exec Command="buildhelper &quot;-b:$(ProjectDir)$(ConfigurationName)-PreBuild.xml&quot; &quot;-p:$(ProjectPath)&quot; &quot;-tf:$(TargetFramework)&quot;" />
   </Target>
-
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="powershell.exe -ExecutionPolicy Unrestricted -noprofile -nologo -noninteractive -Command .'P:\PowerShell\post-build.ps1' -vs_BuildEvent:Post -vs_OutDir:'$(OutDir)' -vs_ConfigurationName:'$(ConfigurationName)' -vs_ProjectName:'$(ProjectName)' -vs_TargetName:'$(TargetName)' -vs_TargetPath:'$(TargetPath)' -vs_ProjectPath:'$(ProjectPath)' -vs_ProjectFileName:'$(ProjectFileName)' -vs_TargetExt:'$(TargetExt)' -vs_TargetFileName:'$(TargetFileName)' -vs_DevEnvDir:'$(DevEnvDir)' -vs_TargetDir:'$(TargetDir)' -vs_ProjectDir:'$(ProjectDir)' -vs_SolutionFileName:'$(SolutionFileName)' -vs_SolutionPath:'$(SolutionPath)' -vs_SolutionDir:'$(SolutionDir)' -vs_SolutionName:'$(SolutionName)' -vs_PlatformName:'$(PlatformName)' -vs_ProjectExt:'$(ProjectExt)' -vs_SolutionExt:'$(SolutionExt)'" />
+    <Exec Command="buildhelper &quot;-b:$(ProjectDir)$(ConfigurationName)-PostBuild.xml&quot; &quot;-p:$(ProjectPath)&quot; &quot;-tf:$(TargetFramework)&quot;" />
   </Target>
-    <ItemGroup>
-      <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\Array3DExtensionMethods.cs">
-        <Link>Array3DExtensionMethods.cs</Link>
-      </Compile>
-      <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\ArrayExtensionMethods.cs">
-        <Link>ArrayExtensionMethods.cs</Link>
-      </Compile>
-      <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\CollectionExtensionMethods.cs">
-        <Link>CollectionExtensionMethods.cs</Link>
-      </Compile>
-      <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\DateTimeExtensionMethods.cs">
-        <Link>DateTimeExtensionMethods.cs</Link>
-      </Compile>
-      <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\EnumerationExtensions.cs">
-        <Link>EnumerationExtensions.cs</Link>
-      </Compile>
-      <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\EventArgs\PropertyChangedEventArgs.cs">
-        <Link>EventArgs\PropertyChangedEventArgs.cs</Link>
-      </Compile>
-      <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\ExpressionExtensions.cs">
-        <Link>ExpressionExtensions.cs</Link>
-      </Compile>
-      <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\GenericIListExtensionMethods.cs">
-        <Link>GenericIListExtensionMethods.cs</Link>
-      </Compile>
-      <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\HashSetExtensionMethods.cs">
-        <Link>HashSetExtensionMethods.cs</Link>
-      </Compile>
-      <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\Helpers.cs">
-        <Link>Helpers.cs</Link>
-      </Compile>
-      <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\IDictionaryExtensionMethods.cs">
-        <Link>IDictionaryExtensionMethods.cs</Link>
-      </Compile>
-      <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\IEnumerableExtensionMethods.cs">
-        <Link>IEnumerableExtensionMethods.cs</Link>
-      </Compile>
-      <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\IListExtensionMethods.cs">
-        <Link>IListExtensionMethods.cs</Link>
-      </Compile>
-      <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\INotifyPropertyChangedExtensionMethods.cs">
-        <Link>INotifyPropertyChangedExtensionMethods.cs</Link>
-      </Compile>
-      <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\PropertyChangedEventHandlerExtensions.cs">
-        <Link>PropertyChangedEventHandlerExtensions.cs</Link>
-      </Compile>
-      <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\RandomHelperMethods.cs">
-        <Link>RandomHelperMethods.cs</Link>
-      </Compile>
-      <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\StringExtensionMethods.cs">
-        <Link>StringExtensionMethods.cs</Link>
-      </Compile>
-      <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\ValueTypeExtensionMethodsDouble.cs">
-        <Link>ValueTypeExtensionMethodsDouble.cs</Link>
-      </Compile>
-      <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\ValueTypeExtensionMethodsIntegers.cs">
-        <Link>ValueTypeExtensionMethodsIntegers.cs</Link>
-      </Compile>
-      <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\ValueTypeExtensionMethodsLongs.cs">
-        <Link>ValueTypeExtensionMethodsLongs.cs</Link>
-      </Compile>
-      <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\ValueTypeExtensionMethodsSingle.cs">
-        <Link>ValueTypeExtensionMethodsSingle.cs</Link>
-      </Compile>
-    </ItemGroup>
-
-    <ItemGroup>
-      <AdditionalFiles Include="..\stylecop.json">
-        <Link>stylecop.json</Link>
-      </AdditionalFiles>
-    </ItemGroup>
-
+  <ItemGroup>
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\Array3DExtensionMethods.cs">
+      <Link>Array3DExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\ArrayExtensionMethods.cs">
+      <Link>ArrayExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\CollectionExtensionMethods.cs">
+      <Link>CollectionExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\DateTimeExtensionMethods.cs">
+      <Link>DateTimeExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\EnumerationExtensions.cs">
+      <Link>EnumerationExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\EventArgs\PropertyChangedEventArgs.cs">
+      <Link>EventArgs\PropertyChangedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\ExpressionExtensions.cs">
+      <Link>ExpressionExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\GenericIListExtensionMethods.cs">
+      <Link>GenericIListExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\HashSetExtensionMethods.cs">
+      <Link>HashSetExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\Helpers.cs">
+      <Link>Helpers.cs</Link>
+    </Compile>
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\IDictionaryExtensionMethods.cs">
+      <Link>IDictionaryExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\IEnumerableExtensionMethods.cs">
+      <Link>IEnumerableExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\IListExtensionMethods.cs">
+      <Link>IListExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\INotifyPropertyChangedExtensionMethods.cs">
+      <Link>INotifyPropertyChangedExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\PropertyChangedEventHandlerExtensions.cs">
+      <Link>PropertyChangedEventHandlerExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\RandomHelperMethods.cs">
+      <Link>RandomHelperMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\StringExtensionMethods.cs">
+      <Link>StringExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\ValueTypeExtensionMethodsDouble.cs">
+      <Link>ValueTypeExtensionMethodsDouble.cs</Link>
+    </Compile>
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\ValueTypeExtensionMethodsIntegers.cs">
+      <Link>ValueTypeExtensionMethodsIntegers.cs</Link>
+    </Compile>
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\ValueTypeExtensionMethodsLongs.cs">
+      <Link>ValueTypeExtensionMethodsLongs.cs</Link>
+    </Compile>
+    <Compile Include="..\Codefarts.ExtensionMethodsNETStd20\ValueTypeExtensionMethodsSingle.cs">
+      <Link>ValueTypeExtensionMethodsSingle.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\stylecop.json">
+      <Link>stylecop.json</Link>
+    </AdditionalFiles>
+  </ItemGroup>
 </Project>
