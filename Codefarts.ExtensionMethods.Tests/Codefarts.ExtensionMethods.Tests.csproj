@@ -39,7 +39,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Codefarts.UnitTestExtensionMethodsStd20\Codefarts.UnitTestExtensionMethodsStd20.csproj" />
+    <ProjectReference Include="..\Codefarts.ExtensionMethods\Codefarts.ExtensionMethods.csproj" />
+    <ProjectReference Include="..\Codefarts.UnitTestExtensionMethods\Codefarts.UnitTestExtensionMethods.csproj" />
   </ItemGroup>
 
 </Project>

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codefarts.ExtensionMethods.Tests", "Codefarts.ExtensionMethods.Tests\Codefarts.ExtensionMethods.Tests.csproj", "{CBBDBA07-5EAE-4B54-A76B-27A60037B359}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codefarts.UnitTestExtensionMethodsStd20", "Codefarts.UnitTestExtensionMethodsStd20\Codefarts.UnitTestExtensionMethodsStd20.csproj", "{1CC3669D-38F1-4FFF-A269-5F5D8BD904C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codefarts.UnitTestExtensionMethods", "Codefarts.UnitTestExtensionMethods\Codefarts.UnitTestExtensionMethods.csproj", "{1CC3669D-38F1-4FFF-A269-5F5D8BD904C2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codefarts.ExtensionMethods", "Codefarts.ExtensionMethods\Codefarts.ExtensionMethods.csproj", "{50011141-2546-4F31-B9C8-A87553D0A5AA}"
 EndProject

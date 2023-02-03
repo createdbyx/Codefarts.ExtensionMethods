@@ -8,7 +8,6 @@ namespace Codefarts.ExtensionMethods.Tests
 {
     using System;
     using Codefarts.ExtensionMethods.Tests.Mocks;
-    using Codefarts.UnitTestExtensionMethods;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass, TestCategory("Assert Extensions")]

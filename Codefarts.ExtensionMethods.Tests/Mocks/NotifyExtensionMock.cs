@@ -18,9 +18,9 @@ namespace Codefarts.ExtensionMethods.Tests.Mocks
         private object objectProperty;
 
         public bool NoSetterBool { get; }
-     
+
         public float PrivateSetterFloat { get; private set; }
-      
+
         public float InternalSetterFloat { get; internal set; }
 
 
@@ -37,7 +37,7 @@ namespace Codefarts.ExtensionMethods.Tests.Mocks
                 if (currentValue != value)
                 {
                     this.objectProperty = value;
-                    this.OnPropertyChanged(nameof(this.ObjectProperty));
+                    this.OnPropertyChanged(currentValue,value);
                 }
             }
         }
@@ -55,7 +55,7 @@ namespace Codefarts.ExtensionMethods.Tests.Mocks
                 if (currentValue != value)
                 {
                     this.stringProperty = value;
-                    this.OnPropertyChanged(nameof(this.StringProperty));
+                    this.OnPropertyChanged(currentValue,value);
                 }
             }
         }
@@ -73,7 +73,7 @@ namespace Codefarts.ExtensionMethods.Tests.Mocks
                 if (currentValue != value)
                 {
                     this.integerProperty = value;
-                    this.OnPropertyChanged(nameof(this.IntegerProperty));
+                    this.OnPropertyChanged(currentValue,value);
                 }
             }
         }
@@ -81,6 +81,11 @@ namespace Codefarts.ExtensionMethods.Tests.Mocks
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        protected virtual void OnPropertyChanged<T>(T oldValue, T newValue, [CallerMemberName] string propertyName = null)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs<T>(propertyName, oldValue, newValue));
         }
     }
 }

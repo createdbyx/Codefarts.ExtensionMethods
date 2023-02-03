@@ -1,33 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <RootNamespace>Codefarts.ExtensionMethods</RootNamespace>
-    <TargetFrameworks>net46;net461;net462;net47;net471;net472;net48;net481;net5.0;net5.0-windows;net6.0;net6.0-windows;net7.0;net7.0-windows;netstandard2.0;netstandard2.1</TargetFrameworks>
-    <LangVersion>default</LangVersion>
+    <RootNamespace>Codefarts.UnitTestExtensionMethods</RootNamespace>
+    <AssemblyName>Codefarts.UnitTestExtensionMethods</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2023.2.3.37</Version>
+    <Version>2023.2.3.42</Version>
     <Authors>Dean Lunz</Authors>
     <Copyright>Codefarts</Copyright>
     <PackageProjectUrl>https://github.com/createdbyx/Codefarts.ExtensionMethods.git</PackageProjectUrl>
     <RepositoryUrl>https://github.com/createdbyx/Codefarts.ExtensionMethods.git</RepositoryUrl>
     <RepositoryType>C#</RepositoryType>
     <Company>Codefarts</Company>
-    <AssemblyVersion>2023.2.3.37</AssemblyVersion>
-    <FileVersion>2023.2.3.37</FileVersion>
-    <ImplicitUsings>disable</ImplicitUsings>
+    <Product>Codefarts.UnitTestExtensionMethods</Product>
+    <AssemblyVersion>2023.2.3.42</AssemblyVersion>
+    <FileVersion>2023.2.3.42</FileVersion>
+    <TargetFrameworks>net46;net461;net462;net47;net471;net472;net48;net481;net5.0;net5.0-windows;net6.0;net6.0-windows;net7.0;net7.0-windows;netstandard2.0;netstandard2.1</TargetFrameworks>
+    <LangVersion>default</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <AdditionalFiles Include="..\stylecop.json" Link="stylecop.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MSTest.TestFramework" Version="2.1.1" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <AdditionalFiles Include="..\stylecop.json">
-      <Link>stylecop.json</Link>
-    </AdditionalFiles>
   </ItemGroup>
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Command="buildhelper &quot;-b:$(ProjectDir)$(ConfigurationName)-PreBuild.xml&quot; &quot;-p:$(ProjectPath)&quot; &quot;-tf:$(TargetFramework)&quot;" />

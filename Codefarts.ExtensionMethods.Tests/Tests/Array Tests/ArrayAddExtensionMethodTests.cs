@@ -8,10 +8,9 @@
 namespace Codefarts.ExtensionMethods.Tests
 {
     using System;
-
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-    [TestClass, TestCategory("Array")] 
+    [TestClass, TestCategory("Array")]
     public class ArrayAddExtensionMethodTests
     {
         [TestMethod]

@@ -4,15 +4,12 @@
 // http://www.codefarts.com
 // </copyright>
 
-using Codefarts.ExtensionMethods;
 
 namespace Codefarts.ExtensionMethods.Tests
 {
     using System;
     using System.ComponentModel;
-    using System.Threading;
     using Codefarts.ExtensionMethods.Tests.Mocks;
-    using Codefarts.UnitTestExtensionMethods;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass, TestCategory("Notify Extension")]
@@ -83,10 +80,7 @@ namespace Codefarts.ExtensionMethods.Tests
             var mock = new NotifyExtensionMock();
 
             mock.IntegerProperty = 123;
-            Assert.That.PropertyChanged(mock, nameof(mock.IntegerProperty), () =>
-            {
-                mock.Notify(nameof(mock.IntegerProperty));
-            });
+            Assert.That.PropertyChanged(mock, nameof(mock.IntegerProperty), () => { mock.Notify(nameof(mock.IntegerProperty)); });
         }
 
         [TestMethod]
@@ -97,17 +91,14 @@ namespace Codefarts.ExtensionMethods.Tests
             mock.IntegerProperty = 123;
 
             mock.PropertyChanged += (s, e) =>
-             {
-                 Assert.IsInstanceOfType(e, typeof(PropertyChangedEventArgs));
-                 var pce = (PropertyChangedEventArgs)e;
-                 Assert.AreEqual(111, pce.OldValue);
-                 Assert.AreEqual(222, pce.NewValue);
-             };
-
-            Assert.That.PropertyChanged(mock, nameof(mock.IntegerProperty), () =>
             {
-                mock.Notify(nameof(mock.IntegerProperty), 111, 222);
-            });
+                Assert.IsInstanceOfType(e, typeof(PropertyChangedEventArgs));
+                var pce = (PropertyChangedEventArgs<int>)e;
+                Assert.AreEqual(111, pce.OldValue);
+                Assert.AreEqual(222, pce.NewValue);
+            };
+
+            Assert.That.PropertyChanged(mock, nameof(mock.IntegerProperty), () => { mock.Notify(nameof(mock.IntegerProperty), 111, 222); });
         }
 
         [TestMethod]

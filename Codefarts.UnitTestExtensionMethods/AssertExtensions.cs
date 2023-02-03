@@ -4,11 +4,10 @@
 // http://www.codefarts.com
 // </copyright>
 
-namespace Codefarts.UnitTestExtensionMethods
+namespace Microsoft.VisualStudio.TestTools.UnitTesting
 {
     using System;
     using System.ComponentModel;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     public static class AssertExtensions
     {
